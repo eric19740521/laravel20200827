@@ -1,36 +1,38 @@
-php laravel&CRUD會員管理
+#php laravel&CRUD會員管理
 
-##參考資料:
-http://blog.chiba.tw/2020/04/05/627/
-https://www.sitepoint.com/crud-create-read-update-delete-laravel-app/
-https://ithelp.ithome.com.tw/articles/10193774
+###參考資料:
+1. http://blog.chiba.tw/2020/04/05/627/
+2. https://www.sitepoint.com/crud-create-read-update-delete-laravel-app/
+3. https://ithelp.ithome.com.tw/articles/10193774
 
 
 
 #git github上傳 操作
 
-cd laravel20200827 開始寫程式
-
-git init
-git remote add origin https://github.com/eric19740521/laravel20200827.git
+1. cd laravel20200827 開始寫程式
+2. git init
+3. git remote add origin https://github.com/eric19740521/laravel20200827.git
  
-git add .
-git status 查看加入要上傳的的檔案
-git commit -m "init commit" 提交上傳
-git push 上傳吧
+4. git add .
+5. git status 查看加入要上傳的的檔案
+6. git commit -m "init commit" 提交上傳
+7. git push 上傳吧
+
+#如果檔案有修改後,才上傳
+1. git add readme.md
+2. git commit -m "修改"
+3. git push
+
+#laravel CRUD
+1. 安裝laragon軟體
 
 
-
-
-1.安裝laragon軟體
-
-
-2.安裝composer軟體
+2. 安裝composer軟體
 
 composer global require "laravel/installer"
 
 
-3.使用composer建立laravel20200827專案(laravel6.0版本)
+3. 使用composer建立laravel20200827專案(laravel6.0版本)
 composer create-project --prefer-dist laravel/laravel laravel20200827 "6.0.*"
 使用者介面
 composer require laravel/ui
@@ -40,14 +42,14 @@ php artisan ui bootstrap
 
 http://laravel20200827.test =>D:\laragon\www\laravel20200827 
 
-4.env環境變數(DB_DATABASE資料庫名稱)
+4. env環境變數(DB_DATABASE資料庫名稱)
 composer.json 套件安裝列表
 修改時區 (config\app.php)
 
 'timezone' => 'Asia/Taipei',
 
 
-5.瀏覽器 看結果,
+5. 瀏覽器 看結果,
 http://127.0.0.1/laravel20200827/public/
 http://laravel20200827.test/
 路由器
@@ -55,7 +57,7 @@ D:\laragon\www\laravel20200827\routes
 auto.laravel20200827.test.conf 設定檔,設定 laravel20200827.test對應本機目錄(正式上線時,public目錄才能公開)
 
 
-6.MVC ???為何要用MVC
+6. MVC ???為何要用MVC
 
 https://railsbook.tw/chapters/10-mvc.html Model、View、Controller 解說
 
@@ -70,7 +72,7 @@ hello-word改成hello,不要帶-
 php artisan make:controller hello       
 
 
-7.資料庫 建立資料表products (帶複數)
+7. 資料庫 建立資料表products (帶複數)
 php artisan make:migration create_products_table --create=products
 
 
@@ -94,7 +96,7 @@ php artisan migrate:status
 在這裡$table->timestamps(); 就是會產生這兩個欄位
 
 
-8.Eloquent Model 
+8. Eloquent Model 
 php artisan make:model products
 產生檔案  D:\laragon\www\laravel20200827\app\products.php
 
