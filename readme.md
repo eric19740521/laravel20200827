@@ -1,72 +1,149 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+php laravel&CRUD會員管理
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+##參考資料:
+http://blog.chiba.tw/2020/04/05/627/
+https://www.sitepoint.com/crud-create-read-update-delete-laravel-app/
+https://ithelp.ithome.com.tw/articles/10193774
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#git github上傳 操作
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+cd laravel20200827 開始寫程式
 
-## Learning Laravel
+git init
+git remote add origin https://github.com/eric19740521/laravel20200827.git
+ 
+git add .
+git status 查看加入要上傳的的檔案
+git commit -m "init commit" 提交上傳
+git push 上傳吧
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1.安裝laragon軟體
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
 
-## Contributing
+2.安裝composer軟體
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+composer global require "laravel/installer"
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3.使用composer建立laravel20200827專案(laravel6.0版本)
+composer create-project --prefer-dist laravel/laravel laravel20200827 "6.0.*"
+使用者介面
+composer require laravel/ui
 
-## License
+php artisan ui bootstrap
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+http://laravel20200827.test =>D:\laragon\www\laravel20200827 
+
+4.env環境變數(DB_DATABASE資料庫名稱)
+composer.json 套件安裝列表
+修改時區 (config\app.php)
+
+'timezone' => 'Asia/Taipei',
+
+
+5.瀏覽器 看結果,
+http://127.0.0.1/laravel20200827/public/
+http://laravel20200827.test/
+路由器
+D:\laragon\www\laravel20200827\routes
+auto.laravel20200827.test.conf 設定檔,設定 laravel20200827.test對應本機目錄(正式上線時,public目錄才能公開)
+
+
+6.MVC ???為何要用MVC
+
+https://railsbook.tw/chapters/10-mvc.html Model、View、Controller 解說
+
+
+
+
+瀏覽器 
+http://laravel20200827.test/hello-world
+
+
+hello-word改成hello,不要帶-
+php artisan make:controller hello       
+
+
+7.資料庫 建立資料表products (帶複數)
+php artisan make:migration create_products_table --create=products
+
+
+產生檔案 D:\laragon\www\laravel20200827\database\migrations\2020_08_26_071352_create_products_table.php
+
+
+
+
+php artisan migrate: 執行所有未完成的遷移(是參考migration table裡面的紀錄)
+php artisan migrate:rollback: 還原migration 操作
+--step: rollback 幾步
+php artisan migrate:reset: 還原所有遷移
+php artisan migrate:refresh: 還原所有遷移，並再執行一次migrate
+--seed: 帶入seed資料
+php artisan migrate:fresh: 刪掉所有資料庫的table(包含migration table)，並再執行一次migrate
+
+
+php artisan migrate:status 
+
+建立資料表的時候，通常會在最後保留兩個欄位，created_at（建立時間）與updated_at（最後更新），
+在這裡$table->timestamps(); 就是會產生這兩個欄位
+
+
+8.Eloquent Model 
+php artisan make:model products
+產生檔案  D:\laragon\www\laravel20200827\app\products.php
+
+
+
+
+一次建立物件與資料表
+php artisan make:model product --migration
+
+
+
+9.
+http://laravel20200827.test/members 功能展示
+
+動作		網址	                對應函式名稱	route 名稱
+GET		/members		index		members.index
+GET		/members/create		create		members.create
+POST		/members		store		members.store
+GET		/members/{member}	show		members.show
+GET		/members/{member}/edit	edit		members.edit
+PUT/PATCH	/members/{member}	update		members.update
+DELETE		/members/{member}	destroy		members.destroy
+
+
+php artisan make:migration create_members_table --create=members
+>>產生檔案D:\laragon\www\laravel20200827\database\migrations\2020_08_26_092638_create_members_table.php
+
+php artisan migrate:refresh
+>>資料表重建
+
+
+php artisan make:controller MemberController --resource --model=Member
+>>加上 –resource 可以自動生成預設的七個方法
+>>產生檔案D:\laragon\www\laravel20200827\app\Http\Controllers\MemberController.php
+>>產生檔案D:\laragon\www\laravel20200827\app\Member.php
+
+
+php artisan route:list 
+>>查詢路由列表
+
+GET/contacts, mapped to the index() method,
+GET /contacts/create, mapped to the create() method,
+POST /contacts, mapped to the store() method,
+GET /contacts/{contact}, mapped to the show() method,
+GET /contacts/{contact}/edit, mapped to the edit() method,
+PUT/PATCH /contacts/{contact}, mapped to the update() method,
+DELETE /contacts/{contact}, mapped to the destroy() method.
+
+
+
+
+
