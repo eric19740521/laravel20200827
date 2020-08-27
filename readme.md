@@ -40,6 +40,7 @@ composer require laravel/ui
 php artisan ui bootstrap
 
 
+D:\laragon\etc\apache2\sites-enabled\auto.laravel20200827.test.conf
 http://laravel20200827.test =>D:\laragon\www\laravel20200827 
 
 4. env環境變數(DB_DATABASE資料庫名稱)
