@@ -1,13 +1,13 @@
 # php laravel&CRUD會員管理
 
-### 參考資料:
+#### 參考資料:
 1. http://blog.chiba.tw/2020/04/05/627/
 2. https://www.sitepoint.com/crud-create-read-update-delete-laravel-app/
 3. https://ithelp.ithome.com.tw/articles/10193774
 
 
 
-# git github上傳 操作
+## git github上傳 操作
 
 1. cd laravel20200827 開始寫程式
 2. git init
@@ -18,12 +18,12 @@
 6. git commit -m "init commit" 提交上傳
 7. git push 上傳吧
 
-# 如果檔案有修改後,才上傳
+### 如果檔案有修改後,才上傳
 1. git add readme.md
 2. git commit -m "修改"
 3. git push
 
-# laravel CRUD
+## laravel CRUD
 1. 安裝laragon軟體
 
 
@@ -137,14 +137,7 @@ php artisan make:controller MemberController --resource --model=Member
 php artisan route:list 
 >>查詢路由列表
 
-GET/contacts, mapped to the index() method,
-GET /contacts/create, mapped to the create() method,
-POST /contacts, mapped to the store() method,
-GET /contacts/{contact}, mapped to the show() method,
-GET /contacts/{contact}/edit, mapped to the edit() method,
-PUT/PATCH /contacts/{contact}, mapped to the update() method,
-DELETE /contacts/{contact}, mapped to the destroy() method.
-
+ 
 
 
 
